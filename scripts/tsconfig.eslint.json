@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "noEmit": true
+  },
+  "files": [
+    "localisation-fixtures/error-setter.tsx",
+    "localisation-fixtures/jsx-text.tsx",
+    "localisation-fixtures/visible-prop.tsx"
+  ]
+}

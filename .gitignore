@@ -1,0 +1,23 @@
+data/
+!apps/web/src/data/
+!apps/web/src/data/productImageSets.ts
+node_modules/
+dist/
+*.db
+*.db-journal
+*.tsbuildinfo
+.env
+.env.local
+nul
+__pycache__/
+
+# Playwright
+playwright-report/
+test-results/
+blob-report/
+# Snapshots and logs written by @playwright/cli when an agent drives the browser
+.playwright-cli/
+
+# macOS metadata (AppleDouble sidecars, Finder state)
+._*
+.DS_Store

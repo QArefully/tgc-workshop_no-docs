@@ -1,0 +1,1 @@
+export { AdminReviewModerationPage } from './AdminReviewModerationPage';

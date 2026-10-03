@@ -1,0 +1,49 @@
+{
+  "name": "@shop/localisation",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./defineMessages": {
+      "types": "./dist/messages/defineMessages.d.ts",
+      "import": "./dist/messages/defineMessages.js"
+    },
+    "./translate": {
+      "types": "./dist/translate.d.ts",
+      "import": "./dist/translate.js"
+    },
+    "./formatMoney": {
+      "types": "./dist/formatMoney.d.ts",
+      "import": "./dist/formatMoney.js"
+    },
+    "./formatDate": {
+      "types": "./dist/formatDate.d.ts",
+      "import": "./dist/formatDate.js"
+    },
+    "./formatNumber": {
+      "types": "./dist/formatNumber.d.ts",
+      "import": "./dist/formatNumber.js"
+    },
+    "./messages/*": {
+      "types": "./dist/messages/*.d.ts",
+      "import": "./dist/messages/*.js"
+    }
+  },
+  "dependencies": {
+    "@shop/contracts": "*"
+  },
+  "scripts": {
+    "build": "tsc --build --force",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0"
+  }
+}

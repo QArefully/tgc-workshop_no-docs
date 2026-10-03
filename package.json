@@ -1,0 +1,41 @@
+{
+  "name": "shop-qarefully",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "postinstall": "npm run build -w @shop/contracts && npm run build -w @shop/catalog && npm run build -w @shop/localisation",
+    "dev": "npm run seed && concurrently -n api,web -c blue,green --kill-others \"npm run dev -w @shop/api\" \"npm run dev -w @shop/web\"",
+    "seed": "npm run seed -w @shop/api",
+    "reset": "npm run reset -w @shop/api",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test:packages && npm run test:unit && npm run test:integration",
+    "test:packages": "npm run test -w @shop/contracts && npm run test -w @shop/catalog && npm run test -w @shop/localisation",
+    "test:profile": "node --test scripts/profile-tests.test.mjs",
+    "test:unit": "npm run test:unit -w @shop/web && npm run test:unit -w @shop/api",
+    "test:integration": "npm run test:integration -w @shop/web && npm run test:integration -w @shop/api",
+    "smoke": "npm run typecheck && npm run test:unit && npm run test:integration",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "lint": "eslint .",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "check:localisation": "node scripts/check-localisation.mjs",
+    "verify": "npm run format && npm run check:localisation && npm run typecheck && npm run lint && npm test && npm run build --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=22.0.0 <23.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@playwright/test": "^1.63.0",
+    "concurrently": "^10.0.3",
+    "eslint": "^9.18.0",
+    "prettier": "^3.4.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.21.0"
+  }
+}

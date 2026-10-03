@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.claude/
+*.md
+*.db
+*.db-journal
+nul

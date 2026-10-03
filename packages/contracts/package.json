@@ -1,0 +1,182 @@
+{
+  "name": "@shop/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./common": {
+      "types": "./dist/common.d.ts",
+      "import": "./dist/common.js"
+    },
+    "./public-errors": {
+      "types": "./dist/publicErrors.d.ts",
+      "import": "./dist/publicErrors.js"
+    },
+    "./address": {
+      "types": "./dist/address.d.ts",
+      "import": "./dist/address.js"
+    },
+    "./trade-account": {
+      "types": "./dist/tradeAccount.d.ts",
+      "import": "./dist/tradeAccount.js"
+    },
+    "./products": {
+      "types": "./dist/products.d.ts",
+      "import": "./dist/products.js"
+    },
+    "./pricing": {
+      "types": "./dist/pricing.d.ts",
+      "import": "./dist/pricing.js"
+    },
+    "./custom-blends": {
+      "types": "./dist/customBlends.d.ts",
+      "import": "./dist/customBlends.js"
+    },
+    "./cart": {
+      "types": "./dist/cart.d.ts",
+      "import": "./dist/cart.js"
+    },
+    "./auth": {
+      "types": "./dist/auth.d.ts",
+      "import": "./dist/auth.js"
+    },
+    "./promos": {
+      "types": "./dist/promos.d.ts",
+      "import": "./dist/promos.js"
+    },
+    "./orders": {
+      "types": "./dist/orders.d.ts",
+      "import": "./dist/orders.js"
+    },
+    "./payments": {
+      "types": "./dist/payments.d.ts",
+      "import": "./dist/payments.js"
+    },
+    "./trade-credit": {
+      "types": "./dist/tradeCredit.d.ts",
+      "import": "./dist/tradeCredit.js"
+    },
+    "./mailbox": {
+      "types": "./dist/mailbox.d.ts",
+      "import": "./dist/mailbox.js"
+    },
+    "./audit": {
+      "types": "./dist/audit.d.ts",
+      "import": "./dist/audit.js"
+    },
+    "./bundles": {
+      "types": "./dist/bundles.d.ts",
+      "import": "./dist/bundles.js"
+    },
+    "./reviews": {
+      "types": "./dist/reviews.d.ts",
+      "import": "./dist/reviews.js"
+    },
+    "./inventory": {
+      "types": "./dist/inventory.d.ts",
+      "import": "./dist/inventory.js"
+    },
+    "./returns": {
+      "types": "./dist/returns.d.ts",
+      "import": "./dist/returns.js"
+    },
+    "./delivery": {
+      "types": "./dist/delivery.d.ts",
+      "import": "./dist/delivery.js"
+    },
+    "./account-depth": {
+      "types": "./dist/accountDepth.d.ts",
+      "import": "./dist/accountDepth.js"
+    },
+    "./company-accounts": {
+      "types": "./dist/companyAccounts.d.ts",
+      "import": "./dist/companyAccounts.js"
+    },
+    "./order-approvals": {
+      "types": "./dist/orderApprovals.d.ts",
+      "import": "./dist/orderApprovals.js"
+    },
+    "./admin-products": {
+      "types": "./dist/adminProducts.d.ts",
+      "import": "./dist/adminProducts.js"
+    },
+    "./admin-variants": {
+      "types": "./dist/adminVariants.d.ts",
+      "import": "./dist/adminVariants.js"
+    },
+    "./admin-promos": {
+      "types": "./dist/adminPromos.d.ts",
+      "import": "./dist/adminPromos.js"
+    },
+    "./admin-users": {
+      "types": "./dist/adminUsers.d.ts",
+      "import": "./dist/adminUsers.js"
+    },
+    "./admin-orders-list": {
+      "types": "./dist/adminOrdersList.d.ts",
+      "import": "./dist/adminOrdersList.js"
+    },
+    "./admin-refunds": {
+      "types": "./dist/adminRefunds.d.ts",
+      "import": "./dist/adminRefunds.js"
+    },
+    "./feature-flags": {
+      "types": "./dist/featureFlags.d.ts",
+      "import": "./dist/featureFlags.js"
+    },
+    "./reorder": {
+      "types": "./dist/reorder.d.ts",
+      "import": "./dist/reorder.js"
+    },
+    "./quick-order": {
+      "types": "./dist/quickOrder.d.ts",
+      "import": "./dist/quickOrder.js"
+    },
+    "./saved-lists": {
+      "types": "./dist/savedLists.d.ts",
+      "import": "./dist/savedLists.js"
+    },
+    "./jobs": {
+      "types": "./dist/jobs.d.ts",
+      "import": "./dist/jobs.js"
+    },
+    "./notifications": {
+      "types": "./dist/notifications.d.ts",
+      "import": "./dist/notifications.js"
+    },
+    "./webhooks": {
+      "types": "./dist/webhooks.d.ts",
+      "import": "./dist/webhooks.js"
+    },
+    "./standing-orders": {
+      "types": "./dist/standingOrders.d.ts",
+      "import": "./dist/standingOrders.js"
+    },
+    "./back-in-stock": {
+      "types": "./dist/backInStock.d.ts",
+      "import": "./dist/backInStock.js"
+    },
+    "./country": {
+      "types": "./dist/country.d.ts",
+      "import": "./dist/country.js"
+    },
+    "./country-profiles": {
+      "types": "./dist/countryProfiles/index.d.ts",
+      "import": "./dist/countryProfiles/index.js"
+    }
+  },
+  "dependencies": {
+    "@sinclair/typebox": "^0.34.0"
+  },
+  "scripts": {
+    "build": "tsc --build --force",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts"
+  }
+}
