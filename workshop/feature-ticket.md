@@ -13,7 +13,7 @@ Plan przygotuj wyłącznie na podstawie plików repozytorium. Nie otwieraj przeg
 ## Kryteria akceptacji
 
 - **AC1 — Dodanie do koszyka:** Niezalogowany klient może wybrać materiał bazowy, dodać co najmniej jeden składnik, ustawić prawidłowe proporcje i dodać mieszankę jako jedną pozycję w koszyku, z widoczną ceną łączną. Może kontynuować zakupy i ma dostępną opcję przejścia do kasy. Sprawdzenie tej opcji ogranicza się do jej dostępności i celu nawigacji; przebieg finalizacji zakupu jest poza zakresem.
-- **AC2 — Aktualizacja ceny na bieżąco:** Zmiana proporcji aktualizuje w podsumowaniu łączny koszt materiałów, opłatę za mieszanie i cenę łączną mieszanki bez przeładowania strony.
-- **AC3 — Bezpieczeństwo:** Podsumowanie wskazuje, czy skonfigurowana mieszanka nadaje się do zastosowań spożywczych. Jeśli się nie nadaje, zawiera wskazówki dotyczące obchodzenia się z nią.
-- **AC4 — Odrzucenie podczas oceny:** Jeśli ocena odrzuci kombinację, którą ekran pozwolił klientowi utworzyć, wyświetl jasny powód, nie dodawaj mieszanki do koszyka i zachowaj konfigurację, aby można ją było poprawić.
-- **AC5 — Edycja mieszanki:** Gdy w koszyku jest jedna mieszanka, jej edycja przywraca wybrane opcje w konfiguratorze. Zapisanie zmian zastępuje tę pozycję, zamiast dodawać kolejną.
+- **AC2 — Aktualizacja ceny na bieżąco:** Zmiana proporcji aktualizuje w podsumowaniu koszt materiałów i cenę łączną bez przeładowania strony. Opłata za mieszanie pozostaje stała. Koszt materiałów wynika z materiału bazowego, wybranych składników i proporcji, a cena łączna jest sumą kosztu materiałów i opłaty; wartości w podsumowaniu i koszyku są zgodne.
+- **AC3 — Bezpieczeństwo:** Podsumowanie wskazuje, czy skonfigurowana mieszanka nadaje się do zastosowań spożywczych. Jeśli się nie nadaje, pokazuje widoczne i czytelne wskazówki dotyczące obchodzenia się z nią.
+- **AC4 — Odrzucenie podczas oceny:** Jeśli ocena odrzuci kombinację, którą ekran pozwolił klientowi utworzyć, wyświetl jasny powód, nie dodawaj mieszanki do koszyka i zachowaj konfigurację. Po jej poprawieniu klient może pomyślnie dodać mieszankę do koszyka.
+- **AC5 — Edycja mieszanki:** Gdy w koszyku jest jedna mieszanka, jej edycja przywraca materiał bazowy, składniki i proporcje w konfiguratorze. Zapisanie zmian aktualizuje skład i cenę tej samej pozycji w koszyku, zamiast dodawać kolejną.
