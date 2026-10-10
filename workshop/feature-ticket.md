@@ -1,19 +1,19 @@
-# QME-418 — Konfigurator Custom Blend
+# QME-418 — Custom Blend Configurator
 
-## Kontekst
+## Context
 
-Klienci hurtowi mogą stworzyć własną mieszankę proszkową o masie 25 kg z materiału bazowego i wybranych składników, a następnie kupić ją jak każdy inny produkt. Konfigurator jest dostępny z głównego menu kategorii bez logowania.
+Wholesale customers can create their own 25 kg powder blend from a base material and selected ingredients, then purchase it like any other product. The configurator is accessible from the main category menu without logging in.
 
-## Zadanie
+## Task
 
-Ta funkcja już istnieje. Przygotuj plan testów E2E z priorytetami, obejmujący konfigurator oraz dodawanie i edycję mieszanki w koszyku. Zakres tego ćwiczenia obejmuje AC1–AC5. Finalizacja zakupu, płatność, dostawa, rabaty i potwierdzenie zamówienia są poza zakresem.
+This feature already exists. Prepare a prioritized E2E test plan covering the configurator and adding and editing a blend in the cart. This exercise covers AC1–AC5. Checkout, payment, delivery, discounts, and order confirmation are out of scope.
 
-Plan przygotuj wyłącznie na podstawie plików repozytorium. Nie otwieraj przeglądarki, nie uruchamiaj aplikacji ani testów, nie instaluj zależności i nie resetuj bazy danych. Nie implementuj testów ani nie zmieniaj aplikacji.
+Prepare the plan using only repository files. Do not open a browser, run the application or tests, install dependencies, or reset the database. Do not implement tests or modify the application.
 
-## Kryteria akceptacji
+## Acceptance criteria
 
-- **AC1 — Dodanie do koszyka:** Niezalogowany klient może wybrać materiał bazowy, dodać co najmniej jeden składnik, ustawić prawidłowe proporcje i dodać mieszankę jako jedną pozycję w koszyku, z widoczną ceną łączną. Może kontynuować zakupy i ma dostępną opcję przejścia do kasy. Sprawdzenie tej opcji ogranicza się do jej dostępności i celu nawigacji; przebieg finalizacji zakupu jest poza zakresem.
-- **AC2 — Aktualizacja ceny na bieżąco:** Zmiana proporcji aktualizuje w podsumowaniu koszt materiałów i cenę łączną bez przeładowania strony. Opłata za mieszanie pozostaje stała. Koszt materiałów wynika z materiału bazowego, wybranych składników i proporcji, a cena łączna jest sumą kosztu materiałów i opłaty; wartości w podsumowaniu i koszyku są zgodne.
-- **AC3 — Bezpieczeństwo:** Podsumowanie wskazuje, czy skonfigurowana mieszanka nadaje się do zastosowań spożywczych. Jeśli się nie nadaje, pokazuje widoczne i czytelne wskazówki dotyczące obchodzenia się z nią.
-- **AC4 — Odrzucenie podczas oceny:** Jeśli ocena odrzuci kombinację, którą ekran pozwolił klientowi utworzyć, wyświetl jasny powód, nie dodawaj mieszanki do koszyka i zachowaj konfigurację. Po jej poprawieniu klient może pomyślnie dodać mieszankę do koszyka.
-- **AC5 — Edycja mieszanki:** Gdy w koszyku jest jedna mieszanka, jej edycja przywraca materiał bazowy, składniki i proporcje w konfiguratorze. Zapisanie zmian aktualizuje skład i cenę tej samej pozycji w koszyku, zamiast dodawać kolejną.
+- **AC1 — Add to cart:** A customer who is not logged in can select a base material, add at least one ingredient, set valid proportions, and add the blend as a single cart item with a visible total price. They can continue shopping and have an option to proceed to checkout. Verification of this option is limited to its availability and navigation destination; the checkout flow is out of scope.
+- **AC2 — Live price updates:** Changing the proportions updates the material cost and total price in the summary without reloading the page. The mixing fee remains fixed. The material cost is determined by the base material, selected ingredients, and proportions, and the total price is the sum of the material cost and the fee; the values in the summary and cart match.
+- **AC3 — Safety:** The summary indicates whether the configured blend is suitable for food use. If it is not, it displays visible, clear handling instructions.
+- **AC4 — Rejection during evaluation:** If evaluation rejects a combination that the screen allowed the customer to create, display a clear reason, do not add the blend to the cart, and preserve the configuration. After correcting it, the customer can successfully add the blend to the cart.
+- **AC5 — Edit a blend:** When the cart contains one blend, editing it restores the base material, ingredients, and proportions in the configurator. Saving changes updates the composition and price of the same cart item instead of adding another one.
