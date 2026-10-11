@@ -1,11 +1,28 @@
-Read `workshop/feature-ticket.md` and write the E2E test plan only to `workshop/e2e-plan.md`. This must be the only change in the repository. Write the plan in English, using no more than 1,500 words. Do not use subagents, ask questions, or implement tests.
+# QME-419 — Custom-blend cart editing regression plan
 
-Work only by statically reading repository files. Do not open a browser, run the application or tests, install dependencies, or reset the database. Inspect the code and existing E2E and lower-level tests directly related to AC1–AC5. Stop the analysis once you have enough evidence to define scenarios, data, and expected results; label any remaining unknowns as assumptions. Do not analyze checkout or the full coverage matrix.
+## Business context
 
-Before choosing test data, verify in the code: which materials can be selected together in the UI, the direction of compatibility from base material → ingredients, allowed proportions, and the minimum order quantity. For the rejection scenario, the UI must allow a combination that is rejected only during evaluation; the corrected combination must be valid. A product defect does not rule out testing the required behavior, but the data must allow an attempt to verify it.
+Wholesale customers order custom powder blends in 25 kg bags. A cart can contain several saved recipes using the same base material, alongside ordinary products. Prepare a focused regression test plan for editing these blends. The feature already exists; this task requires a plan only.
 
-Propose no more than 4 independent browser scenarios, ordered by risk. Each of AC1–AC5 must have representative coverage in a scenario. For AC3, verify the classification of both food-safe and non-food-safe blends, as well as clear handling instructions for the non-food-safe blend. Lower-level tests may justify omitting additional variants, but not an entire acceptance criterion. Do not duplicate rule matrices or pricing variants already covered by lower-level tests in E2E scenarios.
+## Acceptance criteria
 
-Provide shared setup and, for each scenario: a priority with a brief risk justification, reproducible data (base material, ingredients, proportions, quantity expressed in 25 kg bags, applicable minimum order quantity, country, and currency), short numbered steps, specific visible results, and links to the acceptance criteria. Base expected prices on a source independent of the value displayed by the UI. Support findings, including data selection, with concise evidence from the key files, distinguish the current code behavior from the required behavior, and label assumptions.
+- **AC1 — Restore and retain edits:** Editing one of several saved recipes with the same base material restores that recipe's materials, proportions, and cart quantity. Unsaved changes survive a background refresh of cart data.
+- **AC2 — Save and combine:** Saving changes preserves the edited line's quantity and updates its composition and price. If the new recipe matches another saved recipe with the same base material, combine their quantities into one blend line with one mixing fee. Other configured lines and ordinary product lines remain unchanged.
+- **AC3 — Resulting prices:** Existing material and volume-pricing rules determine material cost and totals at the resulting quantity. After combining lines, recalculate pricing for the combined quantity and charge the mixing fee once. Include a merge where the combined quantity changes the applicable volume pricing.
+- **AC4 — Current evaluation:** Save is available only after the current configuration has been accepted by evaluation. Delayed responses for earlier configurations must not replace the current summary or allow saving the wrong configuration.
 
-Use exactly these headings, in this order: `## Scenarios`, `## Existing coverage`, `## Risks`, `## Approach`. In `## Risks`, identify significant discrepancies between the ticket and the code, along with unverified assumptions.
+## Your task
+
+Write only `workshop/e2e-plan.md`, in English, using no more than 1,500 words. This must be the only repository change. Work as a single agent: do not ask questions, use subagents, implement tests, or modify the application.
+
+Use static inspection of relevant source and existing tests only. Do not open a browser, run the application or tests, install dependencies, or reset the database. Stop inspecting once you have enough evidence for a reproducible plan; label remaining unknowns as assumptions. Creating new blends, broad safety/rule matrices, and checkout are outside this regression scope, except where needed to set up edit tests.
+
+Propose no more than four independent scenarios, ordered by risk, with representative coverage of all acceptance criteria. Specify the test level for each scenario; API or component companions are allowed where they provide reliable checks. For each scenario include:
+
+- Priority and brief risk justification, with acceptance-criterion references.
+- Reproducible data and setup: materials, proportions, quantities in 25 kg bags, relevant minimum order quantities, country, and currency. Verify chosen data against repository rules.
+- Short numbered actions and precise observable expected results.
+- Numeric price expectations calculated independently of displayed values or the response under test, with their source and calculation.
+- How response order will be controlled where timing matters.
+
+Use exactly these headings, in this order: `## Scenarios`, `## Existing coverage`, `## Risks`, `## Approach`. Summarize relevant existing coverage and gaps concisely. Record material requirement/code discrepancies and assumptions; do not replace required behavior with current code behavior. Keep the approach practical and evidence-backed, with concise references to relevant files.
